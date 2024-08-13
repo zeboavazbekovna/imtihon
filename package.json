@@ -1,0 +1,25 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "maverizes",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "formidable": "^3.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4",
+    "path": "^0.12.7",
+    "pg": "^8.12.0",
+    "url": "^0.11.4"
+  }
+}
