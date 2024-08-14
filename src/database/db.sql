@@ -1,4 +1,7 @@
-CREATE TABLE category(
+ 
+ --- tablellar uchun komandalar
+ 
+ CREATE TABLE category(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   image_url VARCHAR(255) NOT NULL,
@@ -75,6 +78,9 @@ CREATE TABLE contract (
     FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE CASCADE,
     FOREIGN KEY (contract_type_id) REFERENCES contract_type(id) ON DELETE CASCADE
 );
+
+-- funksiya foizni topish uchun comandalar 
+
 CREATE OR REPLACE FUNCTION percentageOfProduct(price NUMERIC, percentage NUMERIC)
 RETURNS NUMERIC 
 LANGUAGE plpgsql 
@@ -84,8 +90,11 @@ BEGIN
 END;
 $$;
 
+---ishga tushurish
 SELECT percentageOfProduct(1000, 25) AS result;
 
+
+ --- priceni yangilash uchun funksiya 
 CREATE OR REPLACE FUNCTION updatePrice()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -96,6 +105,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--- productni yangilash uchun triggerlar
 
 CREATE TRIGGER update_product_price_trigger
 AFTER INSERT OR UPDATE ON contracts

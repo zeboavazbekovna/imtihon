@@ -1,4 +1,7 @@
 import { fetchData } from '../database/postgres.js';
+
+// kategoriya uchun krudlar 
+
 export async function fetchAllCategories(req, res) {
     try {
         const parentCategories = await fetchData(

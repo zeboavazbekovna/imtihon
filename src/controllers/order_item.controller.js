@@ -1,5 +1,6 @@
 import { fetchData } from '../database/postgres.js';
 
+// orderlar itemlar uchun krudlar 
 
 export async function fetchAllOrderItems(req, res) {
     try {

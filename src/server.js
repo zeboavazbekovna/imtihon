@@ -18,11 +18,10 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('tiny'));
 
- 
+// routlar 
+
 app.use('/api/v1', categoryRoutes);
 app.use('/api/v1', productRoutes);
 app.use('/api/v1', customerRoutes);
@@ -50,6 +49,7 @@ app.get('/overdue-payments', async (req, res) => {
     }
 });
 
+// ishga tushurish
 app.listen(appConfig.port, () => {
     console.log(`Server running on port ${appConfig.port}`);
 });

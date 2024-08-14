@@ -1,7 +1,7 @@
 import pg from 'pg'
 import {databaseConfig} from '../config/database.config.js'
 
-
+// database malumotlari
 const pool = new pg.Pool({
     user: databaseConfig.user,
     host: databaseConfig.host,
@@ -10,6 +10,8 @@ const pool = new pg.Pool({
     port: databaseConfig.port
 })
 
+
+// fetch data 
 export async function fetchData(query, ...params) {
     const client = await pool.connect()
     try {

@@ -1,4 +1,7 @@
-// muddati otb ketgan tovarlarni chiqazish
+
+
+// muddati otb ketgan tovarlarni chiqarish uchun
+
 app.get('/overdue-payments', async (req, res) => {
     try {
         const overduePayments = await fetchData(`

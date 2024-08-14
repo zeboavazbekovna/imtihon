@@ -1,5 +1,7 @@
 import { fetchData } from '../database/postgres.js';
 
+
+// productlar uchun krudlar 
 export async function fetchAllProducts(req, res) {
     try {
         const products = await fetchData("SELECT * FROM products ORDER BY ID;");
